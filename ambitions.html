@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambitions — Sandra Grégoire | Ingénieure Systèmes, Robotique & R&D</title>
+  <meta name="description" content="Ambitions et domaines d'intérêt : systèmes et robotique, mécatronique, et nouvelles technologies." />
+
+  <!--
+    =====================================================
+    POLICES GOOGLE FONTS
+    Space Grotesk = titres, très lisible et moderne/tech
+    Inter         = corps de texte, excellent sur écran
+    =====================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style_new.css" />
+
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- =====================================================
+       NAVIGATION FIXE
+       data-page="xxx" → indique quelle page afficher au clic
+       ===================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        Sandra<span>.</span>
+      </a>
+
+      <!-- Burger visible sur mobile -->
+      <button class="nav-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Accueil</a></li>
+        <li><a href="about.html" data-page="about">À propos</a></li>
+        <li><a href="projects.html" data-page="projects">Projets</a></li>
+        <li><a href="education.html" data-page="education">Formation</a></li>
+        <li><a href="ambitions.html" data-page="ambitions" class="active">Ambitions</a></li>
+        <li><a href="contact.html" data-page="contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE 1 — ACCUEIL
+       ===================================================== -->
+  <div id="page-ambitions" class="page active">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Recherche de poste</div>
+          <h2>Là où je veux aller</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="ambitions-intro">
+          <p>
+            Après deux ans en bureau d'études systèmes — de la machine vision ferroviaire
+            à l'embarqué défense — je cherche à évoluer en tant qu'<strong>Ingénieure et/ou Développeuse</strong>.
+            Je veux un poste qui valorise mes deux facettes : la rigueur d'une <strong>ingénieure systèmes</strong>
+            et la créativité d'une <strong>développeuse web</strong> (avec expertise en frontend/backend et architecture).
+          </p>
+          <p>
+            Je suis particulièrement attirée par les secteurs à <strong>fort impact social</strong> :
+            la <strong>santé et biotech</strong>, l'<strong>environnement et durabilité</strong>, et plus largement
+            toute technologie au service de l'humain. Les enjeux éthiques sont importants pour moi.
+            De ce fait, je ne souhaite pas travailler dans le secteur militaire pour des raisons éthiques fondamentales.
+          </p>
+          <p>
+            Je veux des projets où l'on construit des choses qui n'existent pas encore, dans des environnements
+            à fort enjeu technique, avec une dimension R&D et innovation.
+          </p>
+        </div>
+
+        <!-- Domaines cibles -->
+        <div class="section-header" style="margin-bottom:32px;">
+          <div class="section-eyebrow">Secteurs cibles</div>
+          <h2 style="font-size:1.6rem;">Ce qui m'attire</h2>
+        </div>
+
+        <div class="domains-grid">
+          <div class="domain-card fade-up">
+            <div class="domain-icon">⚕️</div>
+            <div class="domain-title">Santé & Biotech</div>
+            <div class="domain-desc">
+              <strong>Secteur prioritaire.</strong> Orthèse connectée, robot hospitalier, systèmes de diagnostic
+              — la technologie au service du soin et du bien-être humain me touche particulièrement.
+              Du hardware au logiciel, je veux contribuer à des solutions qui sauvent des vies.
+            </div>
+          </div>
+          <div class="domain-card fade-up">
+            <div class="domain-icon">🌍</div>
+            <div class="domain-title">Environnement & Durabilité</div>
+            <div class="domain-desc">
+              <strong>Secteur prioritaire.</strong> Capteurs climatiques, agriculture de précision, énergies renouvelables,
+              monitoring environnemental — des technologies au service de la planète.
+              L'impact écologique durable est un critère clé pour moi.
+            </div>
+          </div>
+          <div class="domain-card fade-up">
+            <div class="domain-icon">💻</div>
+            <div class="domain-title">Développement Web & Applications</div>
+            <div class="domain-desc">
+              Architecte fullstack (Python, JavaScript, React), interfaces utilisateur intuitives,
+              backends robustes. Je peux mener des projets web de bout en bout,
+              ou contribuer à l'équipe technique d'un plus large écosystème.
+            </div>
+          </div>
+          <div class="domain-card fade-up">
+            <div class="domain-icon">🤖</div>
+            <div class="domain-title">Robotique & Systèmes autonomes</div>
+            <div class="domain-desc">
+              Ma formation MSc Robotics m'a donné le goût des systèmes qui perçoivent
+              et agissent dans le monde réel — ROS, perception, navigation, algorithmes IA.
+            </div>
+          </div>
+          <div class="domain-card fade-up">
+            <div class="domain-icon">🔬</div>
+            <div class="domain-title">R&D & Innovation</div>
+            <div class="domain-desc">
+              Méthodes de recherche structurées, biomimétisme, simulation, prototypage rapide —
+              je veux travailler sur des sujets où la solution n'est pas encore connue.
+            </div>
+          </div>
+          <div class="domain-card fade-up">
+            <div class="domain-icon">👁️</div>
+            <div class="domain-title">Machine Vision & IA embarquée</div>
+            <div class="domain-desc">
+              De PyTorch/OpenCV en ferroviaire aux LLMs en robotique hospitalière —
+              l'IA applicative dans des systèmes réels, avec un impact measurable.
+            </div>
+          </div>
+          <div class="domain-card domain-card--wide fade-up">
+            <div class="domain-icon">✨</div>
+            <div class="domain-title">Mais aussi...</div>
+            <div class="domain-desc">
+              Au-delà des secteurs industriels majeurs, je serais tout autant intéressée de contribuer
+              à des <strong>entreprises innovantes et à taille humaine</strong> — PME, start-ups ou ETI —
+              dans des domaines variés comme l'agroalimentaire technologique, le commerce connecté,
+              l'artisanat digital ou encore l'édition de logiciels spécialisés.
+              <br><br>
+              Ces structures ont souvent une culture du <strong>faire</strong>, de l'<strong>agilité</strong>
+              et de l'<strong>impact immédiat</strong> qui m'attire. Leur taille réduite offre la polyvalence
+              et la transversalité des missions que je recherche, avec la possibilité de construire
+              des solutions de A à Z et d'être au cœur des projets.
+            </div>
+          </div>
+        </div>
+
+        <!-- Ce que je cherche / ne cherche pas -->
+        <div style="margin-top: 48px;">
+          <div class="section-header" style="margin-bottom:32px;">
+            <div class="section-eyebrow">Critères de recherche</div>
+            <h2 style="font-size:1.6rem;">Mes priorités pour mon prochain poste</h2>
+          </div>
+
+          <div class="criteria-grid">
+            <div class="criteria-box fade-up">
+              <h3>✅ Ce que je recherche</h3>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Poste technique avec dimension R&D ou innovation</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Diversité des sujets ou compétences, polyvalence valorisée</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Équipe soudée, management de proximité</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Environnement qui permet de monter en compétences</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Projets à fort enjeu avec impact concret</span>
+              </div>
+            </div>
+
+            <div class="criteria-box fade-up" style="transition-delay:0.15s">
+              <h3>❌ Ce que je refuse</h3>
+              <div class="criteria-item">
+                <span class="criteria-cross">✗</span>
+                <span><strong>Secteur militaire et défense d'armement</strong> — raisons éthiques fondamentales</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-cross">✗</span>
+                <span>Projets sans impact social ou environnemental clair</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-cross">✗</span>
+                <span>Environnement peu respectueux</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-cross">✗</span>
+                <span>Management à distance sans feedback régulier</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="criteria-grid" style="margin-top:24px;">
+            <div></div>
+            <div class="criteria-box fade-up">
+              <h3>🔍 Localisation & Format</h3>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Île-de-France (priorité) — mobilité de 45min en transport autout de mon lieu de résidence</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>CDI</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Télétravail partiel ou total bienvenu</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Déplacements ponctuels acceptés (site client)</span>
+              </div>
+              <div class="criteria-item">
+                <span class="criteria-check">✓</span>
+                <span>Disponible immédiatement</span>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div><!-- /page-ambitions -->
+<!-- =====================================================
+       FOOTER — présent sur toutes les pages
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Sandra Grégoire</strong> · Ingénieure Systèmes/Logiciel, Robotique & R&D
+        <br />
+        <span style="font-size:0.78rem;">
+          Boulogne-Billancourt, Île-de-France ·
+          <a href="mailto:sandragregoire@hotmail.fr">sandragregoire@hotmail.fr</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Sandra Grégoire | Ingénieure Systèmes, Robotique & R&D</title>
+  <meta name="description" content="Contactez Sandra Grégoire, ingénieure systèmes et robotique. Disponible pour un CDI en Île-de-France. Réponse sous 24h." />
+
+  <!--
+    =====================================================
+    POLICES GOOGLE FONTS
+    Space Grotesk = titres, très lisible et moderne/tech
+    Inter         = corps de texte, excellent sur écran
+    =====================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style_new.css" />
+
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+  <!-- =====================================================
+       NAVIGATION FIXE
+       ===================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        Sandra<span>.</span>
+      </a>
+
+      <!-- Burger visible sur mobile -->
+      <button class="nav-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Accueil</a></li>
+        <li><a href="about.html" data-page="about">À propos</a></li>
+        <li><a href="projects.html" data-page="projects">Projets</a></li>
+        <li><a href="education.html" data-page="education">Formation</a></li>
+        <li><a href="ambitions.html" data-page="ambitions">Ambitions</a></li>
+        <li><a href="contact.html" data-page="contact" class="nav-cta active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE 1 — ACCUEIL
+       ===================================================== -->
+  <main id="main-content" class="page active">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Contact</div>
+          <h2>Parlons de votre projet</h2>
+          <p>Disponible pour un CDI ou un simple échange — n'hésitez pas à me contacter.</p>
+          <div class="divider"></div>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Infos de contact -->
+          <div class="contact-info fade-up">
+            <h3>Me retrouver</h3>
+            <p>
+              Ingénieure disponible immédiatement, basée en Île-de-France.
+              Je réponds généralement sous 24h.
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:sandragregoire@hotmail.fr" class="contact-link">
+                <div class="contact-link-icon">✉️</div>
+                <div class="contact-link-text">
+                  <strong>Email</strong>
+                  <span>sandragregoire@hotmail.fr</span>
+                </div>
+              </a>
+
+              <a href="tel:+33625231107" class="contact-link">
+                <div class="contact-link-icon">📱</div>
+                <div class="contact-link-text">
+                  <strong>Téléphone</strong>
+                  <span>+33 6 25 23 11 07</span>
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/in/sandra-gr%C3%A9goire-785b8122a/" class="contact-link" target="_blank" rel="noopener noreferrer">
+                <div class="contact-link-icon">💼</div>
+                <div class="contact-link-text">
+                  <strong>LinkedIn</strong>
+                  <span>Voir mon profil → www.linkedin.com/in/sandra-grégoire-785b8122a</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Localisation -->
+            <div style="margin-top:28px; padding:20px; background:var(--bg-2); border:1px solid var(--border); border-radius:var(--radius);">
+              <div style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">Localisation</div>
+              <div style="font-weight:600;">Boulogne-Billancourt, 92100</div>
+              <div style="color:var(--text-muted); font-size:0.88rem;">Île-de-France · France</div>
+            </div>
+          </div>
+
+          <!-- Formulaire de contact -->
+          <!--
+            ATTENTION — Ce formulaire est en HTML pur, il n'envoie pas de mails tout seul !
+            Pour le rendre fonctionnel tu as plusieurs options :
+            1. Formspree.io (gratuit, simple) : change action="https://formspree.io/f/TON_ID"
+            2. Netlify Forms : ajoute data-netlify="true" si tu héberges sur Netlify
+            3. EmailJS : service JS pour envoyer depuis le navigateur
+            ⬇ Section APPRENTISSAGE WEB : c'est ici que tu apprendras les APIs !
+          -->
+          <div class="contact-form fade-up" style="transition-delay:0.15s">
+            <h3 style="margin-bottom:24px;">M'envoyer un message</h3>
+
+            <form id="contactForm" action="https://formspree.io/f/xaqgdoqj" method="POST">
+
+              <div class="form-group">
+                <label for="name">Votre nom *</label>
+                <input type="text" id="name" name="name" placeholder="Marie Dupont" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="marie@entreprise.fr" required />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Entreprise</label>
+                <input type="text" id="company" name="company" placeholder="Nom de votre société" />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Sujet *</label>
+                <select id="subject" name="subject">
+                  <option value="">Choisir un sujet...</option>
+                  <option>Proposition de poste (CDI)</option>
+                  <option>Prendre contact</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Décrivez votre projet, poste ou opportunité..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top: 20px;">
+                ✉ Envoyer le message
+              </button>
+
+              <p id="form-status" style="display:none; margin-top:12px; text-align:center; font-size:0.88rem; color:var(--accent);"></p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main><!-- /page-contact -->
+<!-- =====================================================
+       FOOTER — présent sur toutes les pages
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Sandra Grégoire</strong> · Ingénieure Systèmes/Logiciel, Robotique & R&D
+        <br />
+        <span style="font-size:0.78rem;">
+          Boulogne-Billancourt, Île-de-France ·
+          <a href="mailto:sandragregoire@hotmail.fr">sandragregoire@hotmail.fr</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandra Grégoire — Ingénieure Systèmes & Robotique</title>
+
+  <!--
+    =====================================================
+    POLICES GOOGLE FONTS
+    Space Grotesk = titres, très lisible et moderne/tech
+    Inter         = corps de texte, excellent sur écran
+    =====================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style_new.css" />
+
+</head>
+<body>
+<canvas id="particle-canvas"></canvas>
+<a href="#main-content" class="skip-link">Aller au contenu</a>
+
+
+  <!-- =====================================================
+       NAVIGATION FIXE
+       data-page="xxx" → indique quelle page afficher au clic
+       ===================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        Sandra<span>.</span>
+      </a>
+
+      <!-- Burger visible sur mobile -->
+      <button class="nav-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Accueil</a></li>
+        <li><a href="about.html" data-page="about">À propos</a></li>
+        <li><a href="projects.html" data-page="projects" class="active">Projets</a></li>
+        <li><a href="education.html" data-page="education">Formation</a></li>
+        <li><a href="ambitions.html" data-page="ambitions">Ambitions</a></li>
+        <li><a href="contact.html" data-page="contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE 1 — ACCUEIL
+       ===================================================== -->
+  <div id="page-projects" class="page active">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Portfolio</div>
+          <h2>Mes projets</h2>
+          <p>Expériences professionnelles et académiques — du prototype à la livraison.</p>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Filtres par catégorie -->
+        <div class="projects-filter">
+          <button class="filter-btn active" data-category="all">Tous</button>
+          <button class="filter-btn" data-category="pro">Professionnel</button>
+          <button class="filter-btn" data-category="academique">Académique</button>
+          <button class="filter-btn" data-category="rd">R&D</button>
+          <button class="filter-btn" data-category="robotique">Robotique</button>
+        </div>
+
+        <!-- Grille de projets -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <!-- ---- PROJET 1 : SNCF Machine Vision ---- -->
+          <div class="project-card fade-up" data-category="pro" data-modal="modal-sncf">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+              🚆
+              <span class="project-category"><span class="tag">Ferroviaire</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ECM · SNCF</div>
+              <div class="project-title">Machine Vision SNCF</div>
+              <div class="project-desc">
+                Avant-vente et développement d'un système de vision par ordinateur
+                pour la SNCF. Projet remporté et livré avec satisfaction client confirmée.
+              </div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">OpenCV</span>
+                <span class="tag cyan">NumPy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 2 : DGA A400M ---- -->
+          <div class="project-card fade-up" data-category="pro" data-modal="modal-dga">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0f1923, #1a2840);">
+              ✈️
+              <span class="project-category"><span class="tag">Défense</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ECM · DGA / A400M</div>
+              <div class="project-title">Outil embarqué A400M</div>
+              <div class="project-desc">
+                Conception et prototypage d'un outil embarqué pour l'avion de transport
+                militaire A400M. Livraison prototype + 2 lots industriels.
+              </div>
+              <div class="project-tags">
+                <span class="tag cyan">Sourcing</span>
+                <span class="tag pink">Électronique</span>
+                <span class="tag">C/C++</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 3 : Ferme Robotique ---- -->
+          <div class="project-card fade-up" data-category="rd" data-modal="modal-ferme">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0d1f0d, #1a3320);">
+              🌾
+              <span class="project-category"><span class="tag">R&D</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ECM · Agriculture</div>
+              <div class="project-title">Outil de ferme robotique</div>
+              <div class="project-desc">
+                Recherche de solutions innovantes pour un outil de ferme robotique —
+                biomimétisme, simulation, tests, présentation client.
+              </div>
+              <div class="project-tags">
+                <span class="tag pink">Biomimétisme</span>
+                <span class="tag cyan">Simulation</span>
+                <span class="tag blue">R&T</span>
+              </div>
+            </div>
+          </div>
+
+
+          <!--PROJET 4 : Site Web de centralisation de documentations -->
+          <div class="project-card fade-up" data-category="pro rd" data-modal="modal-centralisation">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0d2a29, #104245);">
+              📄
+              <span class="project-category"><span class="tag">Web</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ECM · Outil Interne</div>
+              <div class="project-title">Plateforme Web de Centralisation</div>
+              <div class="project-desc">
+                Développement d'un site web permettant de centralisé les documentations internes.
+              </div>
+              <div class="project-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>               
+                <span class="tag pink">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 5 : PDF Intelligence ---- -->
+          <div class="project-card fade-up" data-category="pro rd" data-modal="modal-pdf">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1f0d2a, #2d1045);">
+              🤖
+              <span class="project-category"><span class="tag">IA / ML</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ECM · Outil Interne</div>
+              <div class="project-title">Comparaison intelligente de PDFs</div>
+              <div class="project-desc">
+                Application Python combinant Machine Vision, ML et LLMs pour
+                comparer des PDFs classés. Itérations jusqu'à livraison du prototype.
+              </div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag cyan">Machine Vision</span>
+                <span class="tag cyan">LLMs</span>
+                <span class="tag cyan">ML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 6 : HUMS LoRa ---- -->
+          <div class="project-card fade-up" data-category="pro" data-modal="modal-hums">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1f1005, #3a2010);">
+              📡
+              <span class="project-category"><span class="tag">Défense</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">E Business Venture · MBDA</div>
+              <div class="project-title">Système HUMS / Capteurs LoRa</div>
+              <div class="project-desc">
+                Développement complet d'un système de monitoring embarqué (HUMS) en
+                milieu explosif. 
+              </div>
+              <div class="project-tags">
+                <span class="tag">C/C++</span>
+                <span class="tag cyan">Arduino</span>
+                <span class="tag cyan">LoRa</span>
+                <span class="tag cyan">Impression 3D</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 7 : Caméra biaxiale (Académique) ---- -->
+          <div class="project-card fade-up" data-category="academique robotique" data-modal="modal-camera">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0d1a2a, #0a2040);">
+              👁️
+              <span class="project-category"><span class="tag">Robotique</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">Heriot-Watt · MSc Robotics</div>
+              <div class="project-title">Caméra triaxiale biomimétique</div>
+              <div class="project-desc">
+                Système de montage de caméra à deux axes inspiré de l'œil humain —
+                mécatronique, Tracking intelligent, contrôle servo, Arduino.
+              </div>
+              <div class="project-tags">
+                <span class="tag">C/C++</span>
+                <span class="tag pink">Mécatronique</span>
+                <span class="tag cyan">Biomimétique</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 8 : Robot réceptionniste LLM ---- -->
+          <div class="project-card fade-up" data-category="academique rd robotique" data-modal="modal-llm">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1a0d2a, #280d3f);">
+              🏥
+              <span class="project-category"><span class="tag">IA / Robotique</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">Heriot-Watt · MSc Robotics</div>
+              <div class="project-title">LLM réceptionniste Robot — Sécurité patients</div>
+              <div class="project-desc">
+                Recherche publiée sur l'amélioration de la sécurité patients dans un
+                robot réceptionniste hospitalier basé sur un LLM.
+              </div>
+              <div class="project-tags">
+                <span class="tag cyan">LLMs</span>
+                <span class="tag pink">Recherche</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 9 : Drone détection mer ---- -->
+          <div class="project-card fade-up" data-category="academique" data-modal="modal-drone">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #05101f, #0a2030);">
+              🚁
+              <span class="project-category"><span class="tag">Académique</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ESME · Projet ingénieur</div>
+              <div class="project-title">Drone de détection de personnes en mer</div>
+              <div class="project-desc">
+                Conception d'un drone "aile volante" autonome de détection de naufragés : vision par
+                ordinateur, système embarqué, électronique.
+              </div>
+              <div class="project-tags">
+                <span class="tag blue">Drone</span>
+                <span class="tag cyan">Vision</span>
+                <span class="tag pink">Embarqué</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ---- PROJET 10 : Orthèse ---- -->
+          <div class="project-card fade-up" data-category="academique" data-modal="modal-orthese">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1f0a0a, #350f0f);">
+              🦾
+              <span class="project-category"><span class="tag">Médical</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ESME · Projet ingénieur</div>
+              <div class="project-title">Orthèse de rééducation de doigt</div>
+              <div class="project-desc">
+                Prototypage d'une orthèse connectée de rééducation de doigt — impression
+                3D, électronique, biotechnologie.
+              </div>
+              <div class="project-tags">
+                <span class="tag pink">Biotech</span>
+                <span class="tag cyan">Impression 3D</span>
+                <span class="tag pink">Électronique</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJET 11 : Remote Robotic Laboratory-->
+          <div class="project-card fade-up" data-category="academique robotique rd" data-modal="modal-remote-robot">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0a1f1f, #0f3030);">
+              💻
+              <span class="project-category"><span class="tag">Académique</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">Heriot-Watt · MSc Robotics</div>
+              <div class="project-title">Remote Robotic Laboratory</div>
+              <div class="project-desc">
+                Projet de fin d'étude : Expérimentation avec le bras robotique NED2.
+                Implémentation de laboratoires robotiques à distance.
+              </div>
+              <div class="project-tags">
+                <span class="tag ">ROS</span>
+                <span class="tag ">Python</span>
+                <span class="tag pink">Robotique</span>
+                <span class="tag ">Blocky</span>
+                <span class="tag pink">Recherche</span>
+              </div>
+            </div>
+          </div>
+
+          <!--PROJET 12 : Assisting Colorblind Children-->
+          <div class="project-card fade-up" data-category="academique robotique" data-modal="modal-colorblind">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1f1d0a, #302a0f);">
+              👕
+              <span class="project-category"><span class="tag">Académique</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">Heriot-Watt · MSc Robotics</div>
+              <div class="project-title">Nao's Role in Personal Style Development</div>
+              <div class="project-desc">
+                Développement d'une extension d'assistance pour les enfants daltoniens 
+                à choisir des vêtements adaptés à la météo et à leur style personnel grâce au robot NAO.
+              </div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag pink">Robotique</span>
+                <span class="tag cyan">NAO</span>
+              </div>
+            </div>
+          </div>
+
+          <!--PROJET 13 : Ferromobile-->
+          <div class="project-card fade-up" data-category="pro" data-modal="modal-ferromobile">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #1f0a1f, #300f2d);">
+              🚗
+              <span class="project-category"><span class="tag">Automobile/Ferroviaire</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">ECM · SICEF</div>
+              <div class="project-title">Ferromobile</div>
+              <div class="project-desc">
+                Participation à la complétion du dossier de sécurité pour le projet Ferromobile, 
+                véhicule ferroviaire innovant.
+              </div>
+              <div class="project-tags">
+                <span class="tag cyan">AMDEC</span>
+                <span class="tag cyan">ADD</span>
+                <span class="tag cyan">AR</span>
+              </div>
+            </div>
+          </div>
+
+          <!--PROJET 14 : Système de monitoring de plante -->
+          <div class="project-card fade-up" data-category="academique" data-modal="modal-plante">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0a1a0a, #0f2a15);">
+              🌱
+              <span class="project-category"><span class="tag">Académique</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">Heriot-Watt · MSc Robotics</div>
+              <div class="project-title">Système de monitoring de plante</div>
+              <div class="project-desc">
+                Conception d'un système embarqué avec Arduino Uno : capteur d'humidité et de température
+                activant un servomoteur pour l'arrosage automatique d'une plante.
+              </div>
+              <div class="project-tags">
+                <span class="tag">C/C++</span>
+                <span class="tag cyan">Arduino</span>
+                <span class="tag pink">Système embarqué</span>
+              </div>
+            </div>
+          </div>
+
+          <!--PROJET 15 : Ce site web-->
+          <div class="project-card fade-up" data-category="" data-modal="modal-website">
+            <div class="project-thumb" style="background: linear-gradient(135deg, #0a121f, #0f2030);">
+              🌐
+              <span class="project-category"><span class="tag">Web</span></span>
+            </div>
+            <div class="project-body">
+              <div class="project-org">Perso · Développement</div>
+              <div class="project-title">Ce site web</div>
+              <div class="project-desc">
+                Développement de ce site web personnel pour présenter mon portfolio et mes projets.
+              </div>
+              <div class="project-tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag pink">Design</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- /projects-grid -->
+
+
+      </div>
+    </section>
+  </div><!-- /page-projects -->
+<!-- =====================================================
+       FOOTER — présent sur toutes les pages
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Sandra Grégoire</strong> · Ingénieure Systèmes/Logiciel, Robotique & R&D
+        <br />
+        <span style="font-size:0.78rem;">
+          Boulogne-Billancourt, Île-de-France ·
+          <a href="mailto:sandragregoire@hotmail.fr">sandragregoire@hotmail.fr</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+<!-- =====================================================
+       MODALES DE PROJETS
+       Structure identique pour chacune — modifie le contenu !
+       ===================================================== -->
+
+  <!-- Modal SNCF -->
+  <div class="modal-overlay" id="modal-sncf">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-sncf">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">🚆</div>
+
+      <div class="modal-meta">
+        <span class="tag">Ferroviaire</span>
+        <span class="tag cyan">Machine Vision</span>
+        <span class="tag">2024 — 2026</span>
+      </div>
+
+      <h2>Machine Vision SNCF</h2>
+
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>
+          Dans le cadre de mon poste chez ECM, j'ai piloté ce projet de bout en bout :
+          de la phase avant-vente (rédaction des exigences et proposition technique)
+          jusqu'à la livraison du logiciel au client.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Rédaction des exigences et élaboration de la proposition technique en avant-vente → projet remporté</li>
+          <li>Développement d'un programme de vision par ordinateur en Python (NumPy, SciPy, OpenCV)</li>
+          <li>Gestion du projet en équipe de 3 personnes : coordination, suivi jalons, relation client</li>
+          <li>Livraison finale avec satisfaction client confirmée</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag ">Python</span>
+          <span class="tag cyan">OpenCV</span>
+          <span class="tag cyan">NumPy</span>
+          <span class="tag cyan">SciPy</span>
+          <span class="tag cyan">Visual Studio</span>
+          <span class="tag cyan">Git</span>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <h4>Aperçus visuels - reproduction</h4>
+        <div class="photo-gallery">
+            <img src="src/data/img/img_projects/Projet_1_1.jpg" 
+            alt="Reproduction des résultats fournis par le logiciel développé">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal DGA A400M -->
+  <div class="modal-overlay" id="modal-dga">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-dga">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0f1923,#1a2840)">✈️</div>
+
+      <div class="modal-meta">
+        <span class="tag">Défense</span>
+        <span class="tag">Embarqué</span>
+        <span class="tag">2024 — 2026</span>
+      </div>
+
+      <h2>Outil embarqué A400M</h2>
+
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>
+          Développement d'un outil embarqué destiné à l'avion de transport militaire A400M,
+          pour le compte de la Direction Générale de l'Armement (DGA).
+          Prototypage et développement réalisé en interne chez ECM, 
+          production industrielle faite par un fournisseur externe.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Sourcing de l'architecture matérielle selon cahier des charges technique.</li>
+          <li>STB : Specification Technique des Besoins avec le client. </li>
+          <li>Portotypage : Schéma de principe, Schéma fonctionnel</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Contraintes/Normes</h4>
+        <ul>
+          <li>Normes aéronautiques</li>
+          <li>Normes de sécurité et de fiabilité pour l'embarqué militaire</li>
+          <li>Contraintes de poids, d'encombrement, de facilité d'utilisation et de montage, et de consommation énergétique</li>
+        </ul>
+      </div>
+
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag pink">Systèmes embarqués</span>
+          <span class="tag ">C/C++</span>
+          <span class="tag pink">Électronique analogique</span>
+          <span class="tag cyan">Prototypage</span>
+          <span class="tag cyan">Sourcing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Ferme Robotique -->
+  <div class="modal-overlay" id="modal-ferme">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-ferme">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0d1f0d,#1a3320)">🌾</div>
+      <div class="modal-meta"><span class="tag">R&D</span><span class="tag">Agriculture</span><span class="tag">2024 — 2026</span></div>
+      <h2>Outil de ferme robotique</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Projet R&D interne chez ECM : recherche et prototypage conceptuel d'une grelinette automatique 
+          pour une ferme robotique existante.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Lead des recherches de solutions innovantes : biomimétisme, analogie, brainstorming structuré</li>
+          <li>Simulation et tests des hypothèses dont développement d'un algorithme de simulation</li>
+          <li>Élimination des pistes non viables, sélection de la meilleure solution</li>
+          <li>Présentation argumentée de la solution retenue au client</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Méthodologie</h4>
+        <div class="tags-cloud">
+          <span class="tag pink">Biomimétisme</span>
+          <span class="tag pink">Brainstorming structuré</span>
+          <span class="tag pink">Analogie</span>
+          <span class="tag cyan">Simulation</span>
+          <span class="tag">Python</span>
+          <span class="tag blue">R&T</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet_3_1.png" alt="La ferme robotisée">
+          <img src="src/data/img/img_projects/Projet_3_2.png" alt="Grelinette manuelle">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal PDF Intelligence -->
+  <div class="modal-overlay" id="modal-pdf">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-pdf">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1f0d2a,#2d1045)">🤖</div>
+      <div class="modal-meta"><span class="tag">IA / ML</span><span class="tag cyan">LLMs</span><span class="tag">2024 — 2026</span></div>
+      <h2>Comparaison intelligente de PDFs</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Développement d'un outil interne chez ECM pour automatiser la comparaison de documents 
+          PDF classés, en combinant vision par ordinateur, machine learning et LLMs.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Conception de l'architecture de l'application Python</li>
+          <li>Intégration de Machine Vision pour l'extraction de contenu visuel</li>
+          <li>Intégration d'un LLM pour l'analyse sémantique et la comparaison</li>
+          <li>Itérations de tests jusqu'à livraison du prototype fonctionnel</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Contraintes</h4>
+        <ul>
+          <li>Gestion de documents PDF classés et sensibles</li>
+          <li>Précision et fiabilité de la comparaison de schémas mécaniques</li>
+          <li>Performance des résultats</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">Python</span>
+          <span class="tag cyan">Machine Vision</span>
+          <span class="tag cyan">LLMs</span>
+          <span class="tag cyan">Machine Learning</span>
+          <span class="tag cyan">Git</span>
+          <span class="tag cyan">Visual Studio</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal HUMS LoRa -->
+  <div class="modal-overlay" id="modal-hums">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-hums">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1f1005,#3a2010)">📡</div>
+      <div class="modal-meta"><span class="tag">Défense</span><span class="tag">Embarqué</span><span class="tag">2023</span></div>
+      <h2>Système HUMS / Capteurs LoRa</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Stage de 3 mois chez E Business Venture — développement d'un système de monitoring d'état (HUMS) embarqué, conçu pour opérer en environnement explosif, pour MBDA.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Développement logiciel embarqué complet (recherche bibliothèques → développement → tests)</li>
+          <li>Conception et réalisation du montage électronique sur base Arduino</li>
+          <li>Conception et impression 3D du boîtier de protection</li>
+          <li>Rédaction de la documentation technique complète</li>
+          <li>Recherche et qualification des capteurs LoRa adaptés aux contraintes terrain</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">C/C++ embarqué</span>
+          <span class="tag">Python</span>
+          <span class="tag cyan">Arduino</span>
+          <span class="tag cyan">LoRa</span>
+          <span class="tag cyan">Impression 3D</span>
+          <span class="tag pink">Électronique</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet_6_1.jpg" alt="Carte Arduinon MKR Wifi 1010">
+          <img src="src/data/img/img_projects/Projet_6_2.jpg" alt="Prototype du boîtier imprimé en 3D">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Caméra triaxiale -->
+  <div class="modal-overlay" id="modal-camera">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-camera">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0d1a2a,#0a2040)">👁️</div>
+      <div class="modal-meta"><span class="tag">Robotique</span><span class="tag cyan">ROS</span><span class="tag">2023 — 2024</span></div>
+      <h2>Système de caméra triaxiale biomimétique</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Projet académique dans le cadre du MSc Robotics à Heriot-Watt University : conception d'un système de montage de caméra à deux axes d'orientation, inspiré du mécanisme de l'œil humain.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Conception mécatronique du système de rotation biaxiale</li>
+          <li>Programmation ROS pour le contrôle des servomoteurs</li>
+          <li>Intégration caméra et flux vidéo temps réel</li>
+          <li>Tests et validation du comportement biomimétique</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag ">C/C++</span>
+          <span class="tag blue">Recherche</span>
+          <span class="tag pink">Mécatronique</span>
+          <span class="tag cyan">Servomoteurs</span>
+          <span class="tag pink">Biomimétique</span>
+          <span class="tag cyan">Arduino</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet_7_1.png">
+          <img src="src/data/img/img_projects/Projet_7_2.png">          
+          <img src="src/data/img/img_projects/Projet_7_3.png">
+          <img src="src/data/img/img_projects/Projet_7_4.png">
+          <video controls playsinline preload="metadata" muted>
+            <source src="src/data/img/img_projects/Projet7_video1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal LLM Hospital Robot -->
+  <div class="modal-overlay" id="modal-llm">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-llm">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1a0d2a,#280d3f)">🏥</div>
+      <div class="modal-meta"><span class="tag">IA / Robotique</span><span class="tag cyan">Publication</span><span class="tag">2023 — 2024</span></div>
+      <h2>LLM Robot réceptionniste LLM — Sécurité patients</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>
+          Recherche publiée dans le cadre du MSc Robotics à Heriot-Watt University.
+          Ce projet explore comment améliorer la sécurité des patients dans un environnement hospitalier
+          où un robot réceptionniste motorisé par un LLM interagit avec le public.
+        </p>
+      </div>
+      <div class="modal-section">
+        <h4>Contribution</h4>
+        <ul>
+          <li>Création d'un dataset de questions de tests et d'échelle d'analyse</li>
+          <li>Analyse des risques liés à l'utilisation de LLMs dans un contexte médical sensible</li>
+          <li>Proposition et implémentation de garde-fous de sécurité</li>
+          <li>Rédaction et soumission d'un article scientifique publié à SEMDIAL 2024</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Publication</h4>
+        <p>
+          <a href="https://www.semdial.org/anthology/papers/Z/Z24/Z24-4035/" target="_blank" style="color:#e8c9f1">
+            <i><u>
+            "Improving Patient Safety in an LLM-Powered Hospital Robot Receptionist"
+            </u></i>
+          </a>
+        </p>
+        <p>
+          — SEMDIAL 2024 
+        </p>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag cyan">LLMs</span>
+          <span class="tag blue">Robotique sociale</span>
+          <span class="tag pink">Recherche</span>
+          <span class="tag cyan">Classification</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Drone -->
+  <div class="modal-overlay" id="modal-drone">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-drone">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#05101f,#0a2030)">🚁</div>
+      <div class="modal-meta"><span class="tag">Académique</span><span class="tag">Drone</span><span class="tag">ESME</span></div>
+      <h2>Drone de détection de personnes en mer</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Projet ingénieur à l'ESME : conception d'un système drone aile volante pour la détection de naufragés en mer, combinant vision embarquée et système de guidage.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Conception du système de vision embarquée pour la détection humaine</li>
+          <li>Architecture électronique du drone</li>
+          <li>Définition de l'algorithme de détection et de décision</li>
+          <li>Impression 3D du drone en plusieurs modules</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">C/C++</span>
+          <span class="tag cyan">Vision par ordinateur</span>
+          <span class="tag pink">Systèmes embarqués</span>
+          <span class="tag pink">Électronique</span>
+          <span class="tag cyan">Impression 3D</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet9_1.jpeg" alt="Vue d'ensemble du drone aile volante">
+          <img src="src/data/img/img_projects/Projet9_2.jpeg" alt="Vue du moteur">
+          <img src="src/data/img/img_projects/Projet9_3.jpeg" alt="Architecture électronique du drone">
+          <img src="src/data/img/img_projects/Projet9_4.jpeg" alt="Modules imprimés en 3D du drone">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Orthèse -->
+  <div class="modal-overlay" id="modal-orthese">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-orthese">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1f0a0a,#350f0f)">🦾</div>
+      <div class="modal-meta"><span class="tag">Médical</span><span class="tag">Biotech</span><span class="tag">ESME</span></div>
+      <h2>Orthèse de rééducation de doigt</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Projet ingénieur à l'ESME dans la filière Biotechnologie : prototypage d'une orthèse  pour la rééducation du doigt, combinant impression 3D, muscle en silicone, électronique et interface de contrôle.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Conception et impression 3D de la structure de l'orthèse</li>
+          <li>Intégration des actionneurs (servocommandes)</li>
+          <li>Développement du système de contrôle embarqué</li>
+          <li>Tests et validation du prototype sur différentes morphologies de doigt</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag cyan">Impression 3D</span>
+          <span class="tag pink">Électronique</span>
+          <span class="tag">C/C++</span>
+          <span class="tag cyan">Arduino</span>
+          <span class="tag pink">Biotech</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet10_1.jpeg" alt="Prototype de l'orthèse de rééducation de doigt">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Centralisation -->
+  <div class="modal-overlay" id="modal-centralisation">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-centralisation">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0d2a29,#104245)">📄</div>
+      <div class="modal-meta"><span class="tag">Web</span><span class="tag">Outil Interne</span><span class="tag">2024 — 2026</span></div>
+      <h2>Plateforme Web de Centralisation de Documentations</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Développement d'un site web interne chez ECM pour centraliser et organiser les documentations techniques de l'entreprise, facilitant l'accès et le partage des informations entre les équipes.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Conception de l'architecture du site et des pages pour une navigation intuitive</li>
+          <li>Développement front-end avec HTML/CSS et JavaScript pour une interface réactive</li>
+          <li>Structuration du contenu pour une recherche et un accès rapide aux documentations</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag pink">UI/UX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Remote Robotic Laboratory -->
+  <div class="modal-overlay" id="modal-remote-robot">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-remote-robot">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0a1f1f,#0f3030)">💻</div>
+      <div class="modal-meta"><span class="tag">Académique</span><span class="tag">Robotique</span><span class="tag">2023 — 2024</span></div>
+      <h2>Remote Robotic Laboratory</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Projet de fin d'études dans le cadre du MSc Robotics à Heriot-Watt University : expérimentation avec le bras robotique NED2 et implémentation de laboratoires robotiques à distance, permettant aux étudiants de manipuler des robots réels via une interface en ligne.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Développement de l'environnement d'expérimentation avec le bras robotique NED2</li>
+          <li>Programmation des tâches robotiques et des interfaces de contrôle</li>
+          <li>Conception de l'architecture du laboratoire à distance pour l'enseignement</li>
+          <li>Intégration de la plateforme Blockly pour la programmation visuelle du robot</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Publication</h4>
+        <p>
+          <a href="src/data/doc/Paper_Projet11.pdf" target="_blank" style="color:#e8c9f1">
+            <i><u>"Remote Robotic Laboratory: Interactive experimentation via the NED2 arm"</u></i>
+          </a>
+        </p>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">ROS</span>
+          <span class="tag">Python</span>
+          <span class="tag pink">Robotique</span>
+          <span class="tag">Blockly</span>
+          <span class="tag pink">Recherche</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet11_1.jpeg" alt="Interface du laboratoire robotique à distance - Blocky">
+          <img src="src/data/img/img_projects/Projet11_2.jpeg" alt="Setup du laboratoire du bras robotique NED2">
+          <video controls playsinline preload="metadata" muted>
+            <source src="src/data/img/img_projects/Projet11_video1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Assisting Colorblind Children -->
+  <div class="modal-overlay" id="modal-colorblind">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-colorblind">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1f1d0a,#302a0f)">👕</div>
+      <div class="modal-meta"><span class="tag">Académique</span><span class="tag">Robotique</span><span class="tag">2023 — 2024</span></div>
+      <h2>NAO's Role in Personal Style Development for Colorblind Children</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Projet académique dans le cadre du MSc Robotics à Heriot-Watt University : développement d'une extension d'assistance pour le robot humanoïde NAO, afin d'aider les enfants daltoniens à choisir des vêtements adaptés à la météo et à leur style personnel.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Conception de l'extension d'assistance pour le robot NAO</li>
+          <li>Développement d'algorithmes de gestion des couleurs adaptés au daltonisme</li>
+          <li>Programmation des interactions NAO avec les enfants pour des recommandations de vêtements</li>
+          <li>Intégration des données météorologiques pour des suggestions contextuelles</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Publication</h4>
+        <p>
+          <a href="src/data/doc/Paper_Project12.pdf" target="_blank" style="color:#e8c9f1">
+            <i><u>"NAO's Role in Personal Style Development for Colorblind Children"</u></i>
+          </a>
+        </p>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">Python</span>
+          <span class="tag pink">Robotique</span>
+          <span class="tag cyan">NAO</span>
+          <span class="tag pink">Recherche</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet12_1.jpg" alt="Robot NAO">
+          <img src="src/data/img/img_projects/Projet12_2.jpeg" alt="Fonctionnement de l'interface d'assistance pour la sélection de vêtements">
+          <img src="src/data/img/img_projects/Projet12_2.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ferromobile -->
+  <div class="modal-overlay" id="modal-ferromobile">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-ferromobile">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#1f0a1f,#300f2d)">🚗</div>
+      <div class="modal-meta"><span class="tag">Automobile/Ferroviaire</span><span class="tag">Sécurité</span><span class="tag">2024 — 2026</span></div>
+      <h2>Ferromobile</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Participation au projet Ferromobile chez ECM, en collaboration avec SICEF. Le Ferromobile est un véhicule ferroviaire innovant combinant caractéristiques automobile et ferroviaire.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Participation à la complétion du dossier de sécurité du Ferromobile</li>
+          <li>Complétion et documentation de l'AMDEC (Analyse des Modes de Défaillance, de leurs Effets et de leur Criticité)</li>
+          <li>Contribution à l'ADD (Analyse de Danger) et à l'AR (Analyse de Risques)</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Méthodologie</h4>
+        <div class="tags-cloud">
+          <span class="tag cyan">AMDEC</span>
+          <span class="tag cyan">ADD</span>
+          <span class="tag cyan">AR</span>
+          <span class="tag pink">Sécurité ferroviaire</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Système de monitoring de plante -->
+  <div class="modal-overlay" id="modal-plante">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-plante">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0a1a0a,#0f2a15)">🌱</div>
+      <div class="modal-meta"><span class="tag">Académique</span><span class="tag">Embarqué</span><span class="tag">2023 — 2024</span></div>
+      <h2>Système de monitoring de plante</h2>
+      <div class="modal-section">
+        <h4>Contexte</h4>
+        <p>Petit projet académique réalisé à Heriot-Watt University dans le cadre du MSc Robotics. Conception d'un système embarqué complet pour la gestion automatique de l'irrigation d'une plante, avec capteur d'humidité/température et servomoteur pour l'arrosage automatique.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Ce que j'ai fait</h4>
+        <ul>
+          <li>Assemblage du circuit électronique sur Arduino Uno avec capteur d'humidité et de température</li>
+          <li>Programmation en C/C++ du comportement automatique d'arrosage en fonction des seuils d'humidité</li>
+          <li>Intégration d'un servomoteur pour activer la valve d'arrosage</li>
+          <li>Tests et calibrage du système pour assurer un arrosage approprié à la plante</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Stack technique</h4>
+        <div class="tags-cloud">
+          <span class="tag">C/C++</span>
+          <span class="tag cyan">Arduino</span>
+          <span class="tag pink">Système embarqué</span>
+          <span class="tag pink">Électronique</span>
+          <span class="tag cyan">Capteurs</span>
+          <span class="tag cyan">Servomoteur</span>
+        </div>
+      </div>
+      <div class="modal-section">
+        <h4>Aperçus visuels</h4>
+        <div class="photo-gallery">
+          <img src="src/data/img/img_projects/Projet14_1.jpeg" alt="Schéma électronique du circuit Arduino avec capteur et servomoteur pour le système de monitoring">
+          <img src="src/data/img/img_projects/Projet14_2.jpeg" alt="Vue d'ensemble du système de monitoring de plante">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Ce site web -->
+  <div class="modal-overlay" id="modal-website">
+    <div class="modal">
+      <button class="modal-close" data-close="modal-website">✕</button>
+      <div class="modal-thumb" style="background:linear-gradient(135deg,#0a121f,#0f2030)">🌐</div>
+      <div class="modal-meta"><span class="tag">Web</span><span class="tag">Perso</span><span class="tag">2026</span></div>
+      <h2>Ce site web</h2>
+      <div class="modal-section">
+        <h4>Objectif et vision</h4>
+        <p>Portfolio personnel construit ligne de code par ligne de code, pour présenter mon parcours, mes projets et mes compétences en systèmes, robotique et développement web. Un exercice autonome de conception et de développement web complet.</p>
+      </div>
+      <div class="modal-section">
+        <h4>Architecture et technologie</h4>
+        <ul>
+          <li>Site statique multi-pages en HTML5 sémantique, sans framework pour garder le contrôle total sur le code</li>
+          <li>Design "from scratch" en CSS3 avec une grille custom, variables CSS et animations keyframes</li>
+          <li>Gestion de l'état et du routing par le fichier <code>app.js</code> en JavaScript modulaire ES6+</li>
+          <li>Modal système développé en JavaScript pur pour afficher les détails des projets</li>
+          <li>Responsive design pour compatibilité mobile, tablette et desktop</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Structure et contenu</h4>
+        <ul>
+          <li>Page d'accueil (index.html) avec hero section et présentation synthétique</li>
+          <li>Page à propos (about.html) avec parcours détaillé et compétences</li>
+          <li>Page projets (projects.html) avec modaux détaillés pour chaque projet</li>
+          <li>Page formation (education.html) avec diplômes et certifications</li>
+          <li>Page ambitions (ambitions.html) et contact (contact.html)</li>
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h4>Outils et services</h4>
+        <div class="tags-cloud">
+          <span class="tag">HTML5/Sémantique</span>
+          <span class="tag">CSS3/Animations</span>
+          <span class="tag">JavaScript (ES6+)</span>
+          <span class="tag pink">Design responsif</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

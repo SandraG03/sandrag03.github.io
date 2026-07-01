@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formation — Sandra Grégoire | Ingénieure Systèmes, Robotique & R&D</title>
+  <meta name="description" content="Double diplôme d'ingénieur (ESME et Heriot-Watt), avec expériences en aéronautique, robotique, biomédical et plus." />
+
+  <!--
+    =====================================================
+    POLICES GOOGLE FONTS
+    Space Grotesk = titres, très lisible et moderne/tech
+    Inter         = corps de texte, excellent sur écran
+    =====================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style_new.css" />
+
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <a href="#main-content" class="skip-link">Aller au contenu</a>
+  <!-- =====================================================
+       NAVIGATION FIXE
+       data-page="xxx" → indique quelle page afficher au clic
+       ===================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        Sandra<span>.</span>
+      </a>
+
+      <!-- Burger visible sur mobile -->
+      <button class="nav-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Accueil</a></li>
+        <li><a href="about.html" data-page="about">À propos</a></li>
+        <li><a href="projects.html" data-page="projects">Projets</a></li>
+        <li><a href="education.html" data-page="education" class="active">Formation</a></li>
+        <li><a href="ambitions.html" data-page="ambitions">Ambitions</a></li>
+        <li><a href="contact.html" data-page="contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- =====================================================
+       PAGE FORMATION
+       ===================================================== -->
+  <main id="main-content" class="page active">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Formation</div>
+          <h2>Parcours académique</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="education-grid">
+
+          <!-- Heriot-Watt -->
+          <div class="edu-card fade-up">
+            <div class="edu-logo">
+              <img src="./src/data/img/logo/HWU_logo.png" alt="Logo Heriot-Watt University">
+            </div>
+            <div>
+              <div class="edu-date">2023 – 2024</div>
+              <div class="edu-degree">MSc Robotics & Autonomous Systems</div>
+              <div class="edu-school">Heriot-Watt University · Édimbourg, Écosse</div>
+              <div class="edu-desc">
+                Double diplôme international en robotique et systèmes autonomes.
+                Programme intensif couvrant la robotique mécanique, la vision par ordinateur,
+                les interfaces homme-machine, les LLMs et les systèmes embarqués.
+                Enseignement 100% en anglais dans un environnement international.
+              </div>
+
+              <div class="edu-projects">
+                <strong>Projets réalisés</strong>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-camera">
+                  Système de caméra biaxiale biomimétique
+                </a>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-llm">
+                  Publication : "Improving Patient Safety in an LLM-Powered Hospital Robot Receptionist"
+                </a>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-plante">
+                  Système de monitoring de plante connecté
+                </a>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-remote-robot">
+                  Projet de fin d'études : "Remote Robotic Laboratory"
+                </a>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-colorblind">
+                  NAO's Role in Personal Style Development
+                </a>
+              </div>
+
+              <div style="margin-top:14px;" class="tags-cloud">
+                <span class="tag">ROS</span>
+                <span class="tag sky">Machine Vision</span>
+                <span class="tag sky">LLMs</span>
+                <span class="tag amber">Mécatronique</span>
+                <span class="tag sky">IHM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ESME -->
+          <div class="edu-card fade-up" style="transition-delay:0.15s">
+            <div class="edu-logo">
+              <img src="./src/data/img/logo/Esme_logo.png" alt="Logo ESME">
+            </div>
+            <div>
+              <div class="edu-date">2019 – 2024</div>
+              <div class="edu-degree">Diplôme d'Ingénieure Généraliste</div>
+              <div class="edu-school">ESME · Majeure Systèmes Embarqués · Paris</div>
+              <div class="edu-desc">
+                Formation généraliste pluridisciplinaire sur 5 ans couvrant l'électronique
+                analogique, la programmation, l'énergie, la biotechnologie et les systèmes
+                embarqués. Présidente du Bureau des Arts. Projet de fin d'études en
+                partenariat avec l'industrie.
+              </div>
+
+              <div class="edu-projects">
+                <strong>Projets réalisés</strong>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-drone">
+                  Drone de détection de personnes en mer
+                </a>
+                <a class="edu-project-item edu-project-link" href="projects.html#modal-orthese">
+                  Prototypage d'une orthèse de rééducation de doigt connectée
+                </a>
+                <div class="edu-project-item">
+                  Conception théorique d'un gant kinésithérapeutique
+                </div>
+              </div>
+
+              <div style="margin-top:14px;" class="tags-cloud">
+                <span class="tag amber">Systèmes Embarqués</span>
+                <span class="tag amber">Électronique</span>
+                <span class="tag">Python</span>
+                <span class="tag">C/C++</span>
+                <span class="tag amber">Biotech</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formations Professionnelles -->
+          <div class="edu-card fade-up" style="transition-delay:0.3s">
+            <div class="edu-logo">&#127891;</div>
+            <div>
+              <div class="edu-date">Formation continue</div>
+              <div class="edu-degree">Formations réalisées</div>
+              <div class="edu-school">Développement professionnel</div>
+              <div class="edu-desc">
+                Formations techniques et professionnelles suivies dans le cadre de mon activité
+                au sein de l'entreprise ECM.
+              </div>
+
+              <div class="edu-projects">
+                <strong>Formations internes ECM</strong>
+                <div class="edu-project-item edu-project-link">
+                  R&D avec approche biomimétisme, TRIZ, analogie et brainstorming structuré etc.
+                </div>
+                <div class="edu-project-item edu-project-link">
+                  Gestion de projets R&D éligibles au CIR (moyenne & petite entreprise)
+                </div>
+              </div>
+
+              <div class="edu-projects">
+                <strong>Formations externes (ECM, animé par organisme extérieur)</strong>
+                <div class="edu-project-item edu-project-link">
+                  HTML/CSS, Développement Web
+                </div>
+                <div class="edu-project-item edu-project-link">
+                  PHP, JavaScript débutant et avancé
+                </div>
+                <div class="edu-project-item edu-project-link">
+                  ReactJS
+                </div>
+              </div>
+
+              <div style="margin-top:14px;" class="tags-cloud">
+                <span class="tag amber">Biomimétisme</span>
+                <span class="tag sky">TRIZ</span>
+                <span class="tag sky">Analogie</span>
+                <span class="tag blue">CIR</span>
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">PHP</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">ReactJS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="edu-card fade-up" style="transition-delay:0.6s">
+            <div class="edu-logo">&#127942;</div>
+            <div>
+              <div class="edu-date">Certifications</div>
+              <div class="edu-degree">TOEIC 980 </div>
+              <div class="edu-school">Compétences certifiées</div>
+              <div class="edu-desc">
+                TOEIC score 980 – anglais courant, niveau professionnel certifié.
+                Capacité à travailler en anglais dans un contexte technique international.
+              </div>
+
+              <div style="margin-top:14px;" class="tags-cloud">
+                <span class="tag">Anglais C1</span>
+                <span class="tag">Espagnol B1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Habilitations -->
+          <div class="edu-card fade-up" style="transition-delay:0.75s">
+            <div class="edu-logo">&#128274;</div>
+            <div>
+              <div class="edu-date">Habilitations</div>
+              <div class="edu-degree">Secret Défense</div>
+              <div class="edu-school">Capacité à travailler sur projets sensibles</div>
+              <div class="edu-desc">
+                Habilitation Secret Défense permettant de travailler sur des projets
+                sensibles dans les secteurs Défense et Aérospatial, avec accès à des
+                informations et équipements classifiés.
+              </div>
+
+              <div style="margin-top:14px;" class="tags-cloud">
+                <span class="tag">Secret Défense</span>
+                <span class="tag">Défense & Aérospatial</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main><!-- /page-education -->
+<!-- =====================================================
+       FOOTER – présent sur toutes les pages
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Sandra Grégoire</strong> · Ingénieure Systèmes/Logiciel, Robotique & R&D
+        <br />
+        <span style="font-size:0.78rem;">
+          Boulogne-Billancourt, Île-de-France ·
+          <a href="mailto:sandragregoire@hotmail.fr">sandragregoire@hotmail.fr</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

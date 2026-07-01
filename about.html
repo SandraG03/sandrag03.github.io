@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>À propos — Sandra Grégoire | Ingénieure Systèmes, Robotique & R&D</title>
+  <meta name="description" content="Parcours d'ingénieure en Bureau offshoring et robotique. Double diplôme ESME et Heriot-Watt, expérience dans l'aéronautique, la robotique et le développement." />
+
+  <!--
+    =====================================================
+    POLICES GOOGLE FONTS
+    Space Grotesk = titres, très lisible et moderne/tech
+    Inter         = corps de texte, excellent sur écran
+    =====================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style_new.css" />
+
+  <!-- FontAwesome icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+</head>
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+  <!-- =====================================================
+       NAVIGATION FIXE
+       ===================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        Sandra<span>.</span>
+      </a>
+
+      <!-- Burger visible sur mobile -->
+      <button class="nav-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home">Accueil</a></li>
+        <li><a href="about.html" data-page="about" class="active">À propos</a></li>
+        <li><a href="projects.html" data-page="projects">Projets</a></li>
+        <li><a href="education.html" data-page="education">Formation</a></li>
+        <li><a href="ambitions.html" data-page="ambitions">Ambitions</a></li>
+        <li><a href="contact.html" data-page="contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page active">
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">À propos</div>
+          <h2>Qui suis-je ?</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Biographie -->
+          <div class="about-text fade-up">
+            <h3>Ingénieure curieuse, <span class="gradient-text">touche-à-tout</span> passionnée</h3>
+
+            <p>
+              Ingénieure généraliste formée à l'ESME et double-diplômée en Robotique
+              à Heriot-Watt University (Édimbourg), je me situe à l'intersection
+              entre le software embarqué, le développement logiciel, la R&D et les systèmes physiques.
+            </p>
+            <p>
+              Ce qui me motive : transformer une idée ou un besoin client en solution
+              concrète et fonctionnelle. J'aime comprendre le problème dans sa globalité, 
+              puis concevoir et implémenter la solution la plus adaptée. Ce que j'apprécie 
+              particulièrement c'est la programmation : c'est un challenge intellectuel, 
+              mais aussi un moyen de matérialiser une idée en un produit concret.
+            </p>
+            <p>
+              Je suis passionnée par l'innovation et la technologie, mais je garde toujours
+              à l'esprit l'impact humain et sociétal de ce que je développe. Je m'efforce
+              de créer des solutions qui sont non seulement techniquement solides, mais aussi
+              utiles et responsables.
+            </p>
+            <p>
+              J'ai toujours adoré apprendre de nouvelles choses et relever des défis, seule ou avec 
+              des personnes expérimentées. Le fait de chercher une solution avec des compétences que j'ai
+              ou pas encore acquises est un moteur pour moi. J'aime me plonger dans des sujets complexes,
+              les décortiquer et en tirer des solutions concrètes. C'est ce qui me pousse à explorer 
+              différents domaines de l'ingénierie et à m'adapter rapidement à de nouvelles technologies 
+              ou même evironnements techniques. C'est comme ça que j'ai pu travailler sur des projets 
+              très variés et apprendre de nouvelles compétences, comme la robotique ou encore le 
+              développement web et logiciel.
+            </p>
+
+            <!-- Lien vers le CV -->
+            <div style="margin-top: 24px;">
+              <a href="src/data/doc/CV_SG4.pdf" class="btn btn-secondary" style="display:inline-flex; font-size:0.85rem; padding:10px 18px;">
+                ⬇ Télécharger mon CV
+              </a>
+            </div>
+          </div>
+
+          <!-- Parcours timeline -->
+          <div class="fade-up" style="transition-delay:0.15s">
+            <h3 style="margin-bottom:24px;">Parcours</h3>
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+                <div class="timeline-date">2024 — 2026</div>
+                <div class="timeline-title">Ingénieure d'études systèmes</div>
+                <div class="timeline-org">ECM (Engineering Conception Maintenance) · Paris</div>
+                <div class="timeline-desc">
+                  Gestion et développement de projets multi-secteurs (Ferroviaire, Défense, 
+                  Automobile, Aéronautique, Energie, Agriculture),
+                  développement embarqué, programmation logiciel, machine vision, outils internes.
+                </div>
+                <div class="timeline-desc">
+                  Formations : 
+                  <ul style="list-style-type:circle; margin-left:18px; margin-top:8px;">
+                    <li>Web (HTML, CSS, JavaScript, ReactJS)</li>
+                    <li>R&D dans le cadre de petite/moyenne entreprise (CIR et méthodes associées)</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">2023 — 2024</div>
+                <div class="timeline-title">MSc Robotics</div>
+                <div class="timeline-org">Heriot-Watt University · Édimbourg</div>
+                <div class="timeline-desc">
+                  Double diplôme en robotique et systèmes autonomes : ROS, LLMs,
+                  Machine Vision, robotique mécanique.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">Juin — Août 2023</div>
+                <div class="timeline-title">Stagiaire Ingénieure Systèmes Bac+4</div>
+                <div class="timeline-org">E Business Venture</div>
+                <div class="timeline-desc">
+                  Développement d'un système HUMS embarqué pour environnement explosif (systèmes de
+                  suivi d'états - température, humidité, vibrations etc.),
+                  Recherche et analyse de solutions via capteurs LoRa.
+                </div>
+                <div class="timeline-desc">
+                  Technologies : Arduino, impression 3D du boîtier.
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-date">2019 — 2024</div>
+                <div class="timeline-title">Diplôme d'Ingénieure Généraliste</div>
+                <div class="timeline-org">ESME · Majeure Systèmes Embarqués</div>
+                <div class="timeline-desc">
+                  Formation pluridisciplinaire : électronique analogique, programmation,
+                  énergie, mécanique, biotechnologie, systèmes embarqués.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Qualités -->
+        <div style="margin-top: 64px;">
+          <div class="section-header">
+            <div class="section-eyebrow">Soft skills</div>
+            <h2>Ce que j'apporte à une équipe</h2>
+            <div class="divider"></div>
+          </div>
+
+          <div class="qualities-grid">
+            <div class="quality-card fade-up">
+              <div class="quality-icon">🔭</div>
+              <div>
+                <div class="quality-title">Polyvalence technique</div>
+                <div class="quality-desc">Du code embarqué au développement web, du FabLab à la relation client — j'aime jongler entre les disciplines.</div>
+              </div>
+            </div>
+            <div class="quality-card fade-up">
+              <div class="quality-icon">🧩</div>
+              <div>
+                <div class="quality-title">Résolution de problèmes</div>
+                <div class="quality-desc">Approche R&D : je ne cherche pas la première solution, mais la meilleure — biomimétisme, analogie, brainstorming structuré.</div>
+              </div>
+            </div>
+            <div class="quality-card fade-up">
+              <div class="quality-icon">🤝</div>
+              <div>
+                <div class="quality-title">Relations</div>
+                <div class="quality-desc">Capable de construire et maintenir des relations professionnelles positives, avec un fort sens de l'écoute et de l'empathie.</div>
+              </div>
+            </div>
+            <div class="quality-card fade-up">
+              <div class="quality-icon">🌍</div>
+              <div>
+                <div class="quality-title">Anglais courant (TOEIC 980)</div>
+                <div class="quality-desc">Expérience internationale à Édimbourg, capable de travailler en environnement anglophone au quotidien.</div>
+              </div>
+            </div>
+            <div class="quality-card fade-up">
+              <div class="quality-icon">⚡</div>
+              <div>
+                <div class="quality-title">Autonomie & initiative</div>
+                <div class="quality-desc">Habituée à gérer des projets et équipes, je sais prendre des décisions, motiver les personnes et communiquer efficacement.</div>
+              </div>
+            </div>
+            <div class="quality-card fade-up">
+              <div class="quality-icon">📚</div>
+              <div>
+                <div class="quality-title">Apprentissage et adaptation</div>
+                <div class="quality-desc">Capable d'apprendre de nouvelles compétences et s'adapter rapidement aux changements.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compétences techniques -->
+        <div style="margin-top: 80px;">
+          <div class="section-header">
+            <div class="section-eyebrow">Hard skills</div>
+            <h2>Compétences techniques</h2>
+            <div class="divider"></div>
+          </div>
+
+          <div>
+            <p style="margin-top: 16px; margin-bottom: 10px; font-size:0.85rem; color:var(--text-muted); text-align: center;">
+              « La connaissance s’acquiert par l’expérience, tout le reste n’est que de l’information. »
+            </p>
+            <p style="margin-bottom: 70px; font-size:0.85rem; color:var(--text-muted); text-align: center;">
+              — Albert Einstein
+            </p>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-group fade-up">
+              <h3>Langages de programmation</h3>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>Python</span><span style="color:var(--brand)">Avancé</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="80"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>C / C++</span><span style="color:var(--brand)">Intermédiaire+</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="60"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>JavaScript / HTML / CSS</span><span style="color:var(--brand)">Intermédiaire</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="55"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>ROS</span><span style="color:var(--brand)">Bases solides</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="45"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group fade-up" style="transition-delay:0.15s">
+              <h3>Domaines d'expertise</h3>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>Systèmes embarqués</span><span style="color:var(--accent)">Avancé</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="75"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>Machine Vision / ML</span><span style="color:var(--accent)">Intermédiaire+</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="70"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>Électronique Analogique</span><span style="color:var(--accent)">Intermédiaire</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="60"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>Gestion de projet</span><span style="color:var(--accent)">Avancé</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="75"></div>
+                </div>
+              </div>
+
+              <div class="skill-bar">
+                <div class="skill-bar-header">
+                  <span>Modélisation / Impression 3D</span><span style="color:var(--accent)">Intermédiaire</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill" data-width="50"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- Outils -->
+        <div style="margin-top: 80px;">
+          <div class="section-header">
+            <div class="section-eyebrow">Outils</div>
+          </div>
+          <div class="tags-cloud" style="justify-content: center; gap: 10px;">
+            <span class="tag">Visual Studio</span>
+            <span class="tag">Git</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Pack Office</span>
+            <span class="tag">ArduinoIDE</span>
+            <span class="tag">AutoDesk Fusion 360</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+
+
+        <!-- Terminal animé — effet "machine qui code" -->
+        <div class="hero-terminal fade-up" style="margin-top: 80px; max-width: 800px; margin-left:auto; margin-right:auto;">
+          <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">$ </span>
+            <span class="comment"># Quelle ingénieure je suis ?</span>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-line">
+              <span class="prompt">$ </span>
+              <span class="typed-text" data-text="find . -name '*.problem' --depth all"></span><span class="cursor"></span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Analyse le problème sous toutes ses coutures avant d'écrire la première ligne</span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Pose les bonnes questions plutôt que d'accepter les premières hypothèses</span>
+            </div>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-line">
+              <span class="prompt">$ </span>
+              <span class="typed-text" data-text="git log --oneline --graph"></span><span class="cursor"></span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Travail concis : structure claire, branches, commits, documentation à jour</span>
+            </div>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-line">
+              <span class="prompt">$ </span>
+              <span class="typed-text" data-text="ls myopinion/AI"></span><span class="cursor"></span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output error">✗ Permission denied: brain.exe not found — l'IA ne remplace pas la réflexion</span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Utilise l'IA comme levier d'efficacité : revue de code, documentation, exploration rapide</span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Comprend ce qu'elle produit avant de l'intégrer — toujours</span>
+            </div>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-line">
+              <span class="prompt">$ </span>
+              <span class="typed-text" data-text="sudo apt update && apt upgrade skills"></span><span class="cursor"></span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ S'approprie les méthodologies et standards de chaque environnement</span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Identifie les gaps, comble activement : docs, collègues, side-projects</span>
+            </div>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-line">
+              <span class="prompt">$ </span>
+              <span class="typed-text" data-text="ssh team@shared-context"></span><span class="cursor"></span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Autonome sur l'exécution, transparent sur les blocages</span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Sait quand creuser seul et quand impliquer l'équipe</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- =====================================================
+            SECTION PERSONNELLE — "Hors ligne"
+        ===================================================== -->
+
+        <!-- Pour passer a la section "perso" j'aimerais que quand on scroll et on dépasse le divider,
+          on a un switch qui s'anime et se stabilisé à droite en position "détente" (il etait de base en
+          position travail), et du coup quand le switch s'est activé, on a le fond qui change de couleur/ambiance
+          et ca revient normalement quand on scroll en haut -->
+
+        <!-- Séparateur de transition -->
+        <div class="mode-switch-container" style="margin-top: 120px; margin-bottom: 40px;">
+            <div class="switch-labels">
+                <span class="switch-label switch-label-left">Travail</span>
+                <span class="switch-label switch-label-right">Détente</span>
+            </div>
+            <div class="switch-arc-wrapper">
+                <div class="switch-arc"></div>
+                <div class="switch-orbiter">
+                    <div class="switch-icon">
+                        <i class="fa-solid fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+            <label class="switch switch--dummy">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="personal-divider">
+          <span class="personal-divider-label">~ hors ligne ~</span>
+        </div>
+
+          <!-- Contenu : texte + galerie -->
+          <div class="about-grid personal-content" style="margin-top: 80px;">
+
+              <!-- Galerie photo -->
+              <div class="photo-mosaic fade-up" style="transition-delay:0.25s">
+                <img src="src/data/img/img_about/1.jpeg"  alt="Photo 1">
+                <img src="src/data/img/img_about/11.jpeg" alt="Photo 11">
+                <img src="src/data/img/img_about/3.jpeg"  alt="Photo 3">
+                <img src="src/data/img/img_about/4.jpeg"  alt="Photo 4">
+                <img src="src/data/img/img_about/15.jpeg" alt="Photo 15">
+                <img src="src/data/img/img_about/6.jpeg"  alt="Photo 6">
+                <img src="src/data/img/img_about/9.jpeg"  alt="Photo 9">
+                <img src="src/data/img/img_about/8.jpeg"  alt="Photo 8">
+                <img src="src/data/img/img_about/7.jpeg"  alt="Photo 7">
+                <img src="src/data/img/img_about/2.jpeg"  alt="Photo 2">
+                <img src="src/data/img/img_about/13.jpeg" alt="Photo 13">
+                <img src="src/data/img/img_about/14.jpeg" alt="Photo 14">
+              </div>
+
+            <!-- texte perso -->
+            <div class="about-text fade-up">
+              <h3>La personne derrière l'ingénieure,</h3>
+              <h3><span class="gradient-text" style="font-size: 2rem;">Sandra,</span> version non-compilée</h3>
+
+              <div class="about-text fade-up" style="transition-delay:0.1s">
+                <p>
+                  En dehors des branches Git et des schémas d'architecture, j'ai une vie qui déborde
+                  dans tous les sens — et c'est exactement comme ça que j'aime. Présidente du Bureau
+                  des Arts à l'ESME, j'ai appris que gérer des gens passionnés est souvent plus
+                  complexe que déboguer un système embarqué.
+                </p>
+                <p>
+                  La <strong style="color: var(--violet);">photographie</strong> est mon autre langage. Pas le filtre Instagram d'une
+                  seconde, mais vraiment chercher la lumière, le cadre, l'instant qu'on ne voit qu'une
+                  fois. C'est une façon de ralentir que j'ai apprise, entre mes voyages et mes cours.
+                </p>
+                <p>
+                  J'ai un faible pour les <strong style="color: var(--violet);">jeux de société</strong> et 
+                  les <strong style="color: var(--violet);">jeux vidéos</strong>, surtout ceux qui racontent 
+                  une histoire ou demandent gestion et exploration. J'aime les jeux qui me font réfléchir, 
+                  mais aussi ceux qui me font rire — et j'ai un faible pour les jeux coopératifs.
+                </p>
+                <p>
+                  Un autre langage par lequel je m'exprime : la <strong style="color: var(--violet);">musique</strong>. 
+                  J'ai joué du piano pendant 7 ans (mais ne me demandez pas de jouer autre chose que "Au clair de la lune"). 
+                  J'essaye d'aller à des concerts dès que je peux. J'écoute -et chante- de tout, et j'aime m'immerger
+                  dans mes playlists pendant des heures quand je travaille, que je joue, ou que je m'occupe de 
+                  mes <strong style="font-style: italic;">25 plantes</strong> ! 
+                  C'est mon côté multitâche !
+
+                </p>
+                <p>
+                  Le reste du temps, je lis — romans, essais, tout ce qui me sort de mon domaine.
+                  Je dessine quand une idée ne trouve pas d'autre sortie. Je <strong style="color: var(--violet);">cuisine</strong> en improvisant,
+                  mais surtout en adaptant la recette d'origine à ma sauce. Je <strong style="color: var(--violet);">voyage</strong>
+                  dès que l'occasion se présente, avec une vraie curiosité pour les langues et les manières 
+                  de vivre qui ne ressemblent pas à la mienne.
+                </p>
+                <p>
+                  La <strong style="color: var(--violet);">musculation</strong> est un rendez-vous que je prends avec moi-même :
+                  l'effort régulier, le progrès mesurable, la discipline choisie — pas si éloigné de
+                  ce que j'aime dans l'ingénierie, finalement. Et au bout de la journée, mon chien
+                  s'en fiche que j'aie eu une bonne réunion ou non. C'est assez sain.
+                </p>
+                <p>
+                  Ce que toutes ces choses ont en commun : j'y cherche la même chose que dans mon
+                  travail — comprendre, créer, explorer, et surtout, m'amuser. Parce que si on ne s'amuse pas dans ce qu'on fait,
+                  on rate une partie essentielle de la vie.
+                </p>
+
+                <!-- Petits tags "intérêts" -->
+                <div class="personal-tags">
+                  <span class="personal-tag">📷 Photographie</span>
+                  <span class="personal-tag">✏️ Dessin</span>
+                  <span class="personal-tag">📚 Lecture</span>
+                  <span class="personal-tag">🌍 Voyages</span>
+                  <span class="personal-tag">🏋️ Muscu</span>
+                  <span class="personal-tag">🎵 Musique</span>
+                  <span class="personal-tag">🎲 Jeux de société</span>
+                  <span class="personal-tag">🕹️ Jeux vidéos</span>
+                  <span class="personal-tag">🌿 Plantes</span>
+                  <span class="personal-tag">🐶 Mon chien</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      </div>
+    </section>
+  </main>
+<!-- =====================================================
+       FOOTER — présent sur toutes les pages
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Sandra Grégoire</strong> · Ingénieure Systèmes/Logiciel, Robotique & R&D
+        <br />
+        <span style="font-size:0.78rem;">
+          Boulogne-Billancourt, Île-de-France ·
+          <a href="mailto:sandragregoire@hotmail.fr">sandragregoire@hotmail.fr</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sandra Grégoire — Ingénieure Systèmes, Robotique & R&D</title>
+  <meta name="description" content="Ingénieure créative en systèmes, logiciel et robotique. Double diplôme ESME et Heriot-Watt — disponible pour un CDI." />
+
+  <!--
+    =====================================================
+    POLICES GOOGLE FONTS
+    Space Grotesk = titres, très lisible et moderne/tech
+    Inter         = corps de texte, excellent sur écran
+    =====================================================
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Lien vers le fichier CSS externe -->
+  <link rel="stylesheet" href="style_new.css" />
+
+</head>
+
+<body>
+  <canvas id="particle-canvas"></canvas>
+  <a href="#main-content" class="skip-link">Aller au contenu</a>
+
+  <!-- =====================================================
+       NAVIGATION FIXE
+       data-page="xxx" → indique quelle page afficher au clic
+       ===================================================== -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        Sandra<span>.</span>
+      </a>
+
+      <!-- Burger visible sur mobile -->
+      <button class="nav-burger" id="burger" aria-label="Menu de navigation" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" data-page="home" class="active">Accueil</a></li>
+        <li><a href="about.html" data-page="about">À propos</a></li>
+        <li><a href="projects.html" data-page="projects">Projets</a></li>
+        <li><a href="education.html" data-page="education">Formation</a></li>
+        <li><a href="ambitions.html" data-page="ambitions">Ambitions</a></li>
+
+        <li><a href="contact.html" data-page="contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page active">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-3d-orb"></div>
+      <div class="container hero-inner">
+
+        <div class="hero-eyebrow">
+          <span class="status-dot"></span>
+          Disponible immédiatement · Île-de-France
+        </div>
+
+        <h1>
+          Sandra<br />
+          <span class="gradient-text">Grégoire</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Ingénieure Systèmes · Logiciel · Robotique · R&D
+        </p>
+
+        <!-- Terminal animé — effet "machine qui code" -->
+        <div class="hero-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+            <div class="terminal-dot"></div>
+          </div>
+          <div class="terminal-line">
+            <span class="prompt">$ </span>
+            <span class="comment"># Qui suis-je ?</span>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-line">
+              <span class="prompt">$ </span>
+              <span class="typed-text" data-text="whoami"></span><span class="cursor"></span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ Ingénieure double-diplômée | Python · C++ · Web · ROS</span>
+            </div>
+            <div class="terminal-line terminal-output" style="opacity:0">
+              <span class="output">→ 2 ans d'expérience | Défense · Ferroviaire · Automobile · Energie · Agriculture · Industrie · Aéronautique</span>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" data-action="projects">
+            ⚡ Voir mes projets
+          </button>
+          <button class="btn btn-secondary" data-action="contact">
+            ✉ Me contacter
+          </button>
+        </div>
+
+        <!-- Chiffres clés -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Ans d'expérience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Projets livrés</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Diplômes d'ingénieur</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Aperçu compétences sur la home -->
+    <section class="section" style="padding-top: 40px;">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Stack technique</div>
+          <h2>Ce avec quoi je travaille</h2>
+          <div class="divider"></div>
+        </div>
+
+        <!-- tags : Langages / tags cyan : Technologies / tags pink : Savoir-faire / tags blue : Savoir-être -->
+        <div class="tags-cloud" style="justify-content: center; gap: 10px;">
+          <span class="tag">Python</span>
+          <span class="tag">C/C++</span>
+          <span class="tag">ROS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">SQL</span>
+          <span class="tag pink">Machine Learning</span>
+          <span class="tag pink">Machine Vision</span>
+          <span class="tag cyan">OpenCV</span>
+          <span class="tag cyan">PyTorch</span>
+          <span class="tag pink">Électronique Embarquée</span>
+          <span class="tag cyan">Arduino</span>
+          <span class="tag pink">Impression 3D</span>
+          <span class="tag cyan">Git</span>
+          <span class="tag cyan">Visual Studio</span>
+          <span class="tag pink">LLMs</span>
+          <span class="tag cyan">Docker</span>
+          <span class="tag cyan">VBA</span>
+          <span class="tag pink">Gestion de projet</span>
+        </div>
+        <div class="section-header" style="margin-top: 50px;">
+          <div class="section-eyebrow">Qualités humaines</div>
+          <h2>Ce qui me définit</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="tags-cloud" style="justify-content: center; gap: 10px; margin-top: 15px;">
+          <span class="tag blue">Curiosité</span>
+          <span class="tag blue">Autonomie</span>
+          <span class="tag blue">Rigueur</span>
+          <span class="tag blue">Esprit d'équipe</span>
+          <span class="tag blue">Communication</span>
+          <span class="tag blue">Créativité</span>
+          <span class="tag blue">Adaptabilité</span>
+          <span class="tag blue">Apprentissage continu</span>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /page-home -->
+<!-- =====================================================
+       FOOTER — présent sur toutes les pages
+       ===================================================== -->
+  <footer>
+    <div class="container">
+      <p>
+        © 2026 <strong>Sandra Grégoire</strong> · Ingénieure Systèmes/Logiciel, Robotique & R&D
+        <br />
+        <span style="font-size:0.78rem;">
+          Boulogne-Billancourt, Île-de-France ·
+          <a href="mailto:sandragregoire@hotmail.fr">sandragregoire@hotmail.fr</a>
+        </span>
+      </p>
+    </div>
+  </footer>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>
