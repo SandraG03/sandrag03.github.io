@@ -1748,7 +1748,7 @@ footer strong {
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 500px;
+  height: 600px;
   margin: 0 auto;
   overflow: visible;
 }
@@ -1779,9 +1779,14 @@ footer strong {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
   will-change: transform;
+}
+
+.tool-node:hover {
+  z-index: 100;
 }
 
 .tool-node .node-circle {
@@ -1836,7 +1841,7 @@ footer strong {
   visibility: hidden;
   transition: all 0.3s ease;
   pointer-events: none;
-  z-index: 10;
+  z-index: 1000;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
