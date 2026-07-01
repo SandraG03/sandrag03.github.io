@@ -1802,7 +1802,7 @@ footer strong {
   }
   .personal-content .photo-mosaic {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 140px;
+    grid-auto-rows: minmax(110px, 1fr);
   }
   .modal {
     padding: 24px;
@@ -1838,12 +1838,12 @@ footer strong {
     grid-template-columns: 1fr;
   }
   .personal-content .photo-mosaic {
-    grid-template-columns: 1fr;
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
   }
   .personal-content .photo-mosaic img {
-    height: auto;
-    aspect-ratio: 3 / 2;
-    min-height: 200px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
