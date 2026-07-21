@@ -3,6 +3,7 @@ import { animateTerminal, triggerAnimations, animateSkillBars } from './utils/an
 import { initializeModals, initializeProjectUI } from './utils/projects.js';
 import { initializeForm } from './utils/contact.js';
 import { initParticles } from './utils/particles.js';
+import { initializeAboutPage } from './utils/about.js';
 
 function initializeApp() {
   console.log('🚀 Portfolio redesign loaded');
@@ -48,6 +49,10 @@ function initializeApp() {
 
   // Animate skill bars
   animateSkillBars();
+
+  if (document.getElementById('tools-spiderweb')) {
+    initializeAboutPage();
+  }
 
   // --- Mode switch (travail/détente) ---
   const modeToggle = document.getElementById('mode-toggle');
