@@ -1897,7 +1897,7 @@ footer strong {
   position: absolute;
   bottom: calc(100% + 8px);
   left: 50%;
-  transform: translateX(-50%) translateY(4px);
+  transform: translateX(calc(-50% + var(--tt-shift, 0px))) translateY(4px);
   background: var(--bg-2);
   border: 1px solid var(--border-hover);
   border-radius: 12px;
@@ -1915,7 +1915,19 @@ footer strong {
 .tool-node:hover .node-tooltip {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(-4px);
+  transform: translateX(calc(-50% + var(--tt-shift, 0px))) translateY(-4px);
+}
+
+/* Flip below the node when there isn't room above (near top of screen) */
+.tool-node .node-tooltip.tooltip-flip {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+.tool-node .node-tooltip.tooltip-flip {
+  transform: translateX(calc(-50% + var(--tt-shift, 0px))) translateY(-4px);
+}
+.tool-node:hover .node-tooltip.tooltip-flip {
+  transform: translateX(calc(-50% + var(--tt-shift, 0px))) translateY(4px);
 }
 
 .node-tooltip h4 {
@@ -1953,21 +1965,32 @@ footer strong {
 /* Responsive spiderweb */
 @media (max-width: 768px) {
   .tools-spiderweb {
-    height: min(380px, 70vw);
+    height: min(480px, 100vw);
   }
   .tool-node {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
   }
   .tool-node .node-circle {
-    width: 52px;
-    height: 52px;
+    width: 40px;
+    height: 40px;
+  }
+  .tool-node.central .node-circle {
+    width: 50px;
+    height: 50px;
+  }
+  .tool-node.central .node-icon {
+    font-size: 1rem;
+  }
+  .tool-node.central .node-label {
+    font-size: 0.48rem;
   }
   .tool-node .node-icon {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
+    margin-bottom: 1px;
   }
   .tool-node .node-label {
-    font-size: 0.55rem;
+    font-size: 0.45rem;
   }
   .node-tooltip {
     min-width: 160px;
@@ -1984,22 +2007,33 @@ footer strong {
 
 @media (max-width: 480px) {
   .tools-spiderweb {
-    height: min(420px, 95vw);
-    min-height: 280px;
+    height: min(540px, 130vw);
+    min-height: 320px;
   }
   .tool-node {
-    width: 72px;
-    height: 72px;
-  }
-  .tool-node .node-circle {
     width: 52px;
     height: 52px;
   }
+  .tool-node .node-circle {
+    width: 34px;
+    height: 34px;
+  }
+  .tool-node.central .node-circle {
+    width: 42px;
+    height: 42px;
+  }
+  .tool-node.central .node-icon {
+    font-size: 0.9rem;
+  }
+  .tool-node.central .node-label {
+    font-size: 0.42rem;
+  }
   .tool-node .node-icon {
-    font-size: 1.05rem;
+    font-size: 0.75rem;
+    margin-bottom: 1px;
   }
   .tool-node .node-label {
-    font-size: 0.55rem;
+    font-size: 0.42rem;
   }
   .node-tooltip {
     min-width: 140px;
